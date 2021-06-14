@@ -1,8 +1,8 @@
 package xmldom
 
 import (
-	"fmt"
 	"bytes"
+	"fmt"
 )
 
 const (
@@ -77,7 +77,7 @@ func ExampleEmptyElementTag() {
 	doc.EmptyElementTag = true
 	fmt.Println(doc.Root.XML())
 	// Output:
-	// <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns0:Content xmlns:ns0="namespace_0"><ns1:Item>item1</ns1:Item><ns1:Item>item2</ns1:Item></ns0:Content><ns2:Other xmlns:ns2="namespace_2" param="test_param_value" /></S:Body></S:Envelope>
+	// <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns0:Content xmlns:ns0="namespace_0" xmlns:ns1="namespace_1"><ns1:Item>item1</ns1:Item><ns1:Item>item2</ns1:Item></ns0:Content><ns2:Other xmlns:ns2="namespace_2" param="test_param_value" /></S:Body></S:Envelope>
 }
 
 func ExampleStartTagEndTag() {
@@ -85,7 +85,7 @@ func ExampleStartTagEndTag() {
 	doc.EmptyElementTag = false
 	fmt.Println(doc.Root.XML())
 	// Output:
-	// <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns0:Content xmlns:ns0="namespace_0"><ns1:Item>item1</ns1:Item><ns1:Item>item2</ns1:Item></ns0:Content><ns2:Other xmlns:ns2="namespace_2" param="test_param_value"></ns2:Other></S:Body></S:Envelope>
+	// <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns0:Content xmlns:ns0="namespace_0" xmlns:ns1="namespace_1"><ns1:Item>item1</ns1:Item><ns1:Item>item2</ns1:Item></ns0:Content><ns2:Other xmlns:ns2="namespace_2" param="test_param_value"></ns2:Other></S:Body></S:Envelope>
 }
 
 func ExampleNode_GetAttribute() {
